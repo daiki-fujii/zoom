@@ -2,9 +2,12 @@ const socket = io('/')
 const videoGrid = document.getElementById('video-grid')
 let MyVideoStream
 const myVideo = document.createElement('video')
-myVideo.muted = true
-myVideo.autoplay = true
-myVideo.playsinline = true
+myVideo.setAttribute('muted', '')
+myVideo.setAttribute('autoplay', '')
+myVideo.setAttribute('playsinline', '')
+// myVideo.muted = true
+// myVideo.autoplay = true
+// myVideo.playsinline = true
 
 const constraints = {
   video: true,
@@ -53,6 +56,7 @@ async function getMedia(constraints) {
 
 const addVideoStream = (video, stream) => {
   video.srcObject = stream
+
   video.addEventListener('loadedmetadata', () => {
     video.play()
   })
