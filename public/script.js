@@ -2,7 +2,7 @@ const socket = io('/')
 const videoGrid = document.getElementById('video-grid')
 let MyVideoStream
 const myVideo = document.createElement('video')
-myVideo.setAttribute('muted', '')
+// myVideo.setAttribute('muted', '')
 myVideo.setAttribute('autoplay', '')
 myVideo.setAttribute('playsinline', '')
 // myVideo.muted = true
@@ -42,7 +42,7 @@ async function getMedia(constraints) {
     peer.on('call', call => {
       call.answer(stream)
       const video = document.createElement('video')
-      video.setAttribute('muted', '')
+      // video.setAttribute('muted', '')
       video.setAttribute('autoplay', '')
       video.setAttribute('playsinline', '')
       call.on('stream', userVideoStream => {
@@ -101,7 +101,6 @@ const setMuteButton = () => {
   const html = '<i class="fas fa-microphone"></i><span>Mute</span>'
   document.getElementsByClassName('main__mute_button')[0].innerHTML = html
 }
-
 const setUnmuteButton = () => {
   const html = '<i class="unmute fas fa-microphone-slash"></i><span>Unmute</span>'
   document.getElementsByClassName('main__mute_button')[0].innerHTML = html
