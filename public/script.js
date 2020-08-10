@@ -2,12 +2,9 @@ const socket = io('/')
 const videoGrid = document.getElementById('video-grid')
 let MyVideoStream
 const myVideo = document.createElement('video')
-// myVideo.setAttribute('muted', '')
 myVideo.setAttribute('autoplay', '')
 myVideo.setAttribute('playsinline', '')
-// myVideo.muted = true
-// myVideo.autoplay = true
-// myVideo.playsinline = true
+myVideo.muted = true
 
 const constraints = {
   video: true,
@@ -42,7 +39,7 @@ async function getMedia(constraints) {
     peer.on('call', call => {
       call.answer(stream)
       const video = document.createElement('video')
-      // video.setAttribute('muted', '')
+      myVideo.muted = true
       video.setAttribute('autoplay', '')
       video.setAttribute('playsinline', '')
       call.on('stream', userVideoStream => {
