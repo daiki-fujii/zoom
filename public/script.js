@@ -3,6 +3,9 @@ const videoGrid = document.getElementById('video-grid')
 let MyVideoStream
 const myVideo = document.createElement('video')
 myVideo.muted = true
+myVideo.autoplay = true
+myVideo.playsinline = true
+
 const constraints = {
   video: true,
   audio: true
