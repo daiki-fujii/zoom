@@ -42,6 +42,9 @@ async function getMedia(constraints) {
     peer.on('call', call => {
       call.answer(stream)
       const video = document.createElement('video')
+      myVideo.setAttribute('muted', '')
+      myVideo.setAttribute('autoplay', '')
+      myVideo.setAttribute('playsinline', '')
       call.on('stream', userVideoStream => {
         addVideoStream(video, userVideoStream)
       })
